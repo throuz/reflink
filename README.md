@@ -1,96 +1,68 @@
-# legacy-reflink
+# Reflink
+
+Reflink is a Solana-based referral tracking and reward system that helps dApps grow their user base through on-chain referrals.
+
+## Features
+
+- Create and manage referral campaigns
+- Track referral clicks and conversions
+- Distribute rewards in SOL or SPL tokens
+- View detailed analytics and statistics
+- Support for both campaign creators and referrers
+
+## Tech Stack
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Solana Web3.js
+- @solana/wallet-adapter
+- React Query
 
 ## Getting Started
 
-### Prerequisites
+1. Clone the repository:
 
-- Node v18.18.0 or higher
-
-- Rust v1.77.2 or higher
-- Anchor CLI 0.30.1 or higher
-- Solana CLI 1.18.17 or higher
-
-### Installation
-
-#### Clone the repo
-
-```shell
-git clone <repo-url>
-cd <repo-name>
+```bash
+git clone https://github.com/yourusername/reflink.git
+cd reflink
 ```
 
-#### Install Dependencies
+2. Install dependencies:
 
-```shell
+```bash
 pnpm install
 ```
 
-#### Start the web app
+3. Start the development server:
 
-```
+```bash
 pnpm dev
 ```
 
-## Apps
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### anchor
+## Project Structure
 
-This is a Solana program written in Rust using the Anchor framework.
-
-#### Commands
-
-You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the
-command with `pnpm`, eg: `pnpm anchor`.
-
-#### Sync the program id:
-
-Running this command will create a new keypair in the `anchor/target/deploy` directory and save the address to the
-Anchor config file and update the `declare_id!` macro in the `./src/lib.rs` file of the program.
-
-You will manually need to update the constant in `anchor/lib/counter-exports.ts` to match the new program id.
-
-```shell
-pnpm anchor keys sync
+```
+src/
+├── app/
+│   ├── layout.tsx         # Root layout with wallet providers
+│   ├── page.tsx           # Landing page
+│   ├── create-campaign/   # Campaign creation page
+│   └── dashboard/         # Dashboard for creators and referrers
+├── components/            # Reusable components
+└── styles/               # Global styles
 ```
 
-#### Build the program:
+## Contributing
 
-```shell
-pnpm anchor-build
-```
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-#### Start the test validator with the program deployed:
+## License
 
-```shell
-pnpm anchor-localnet
-```
-
-#### Run the tests
-
-```shell
-pnpm anchor-test
-```
-
-#### Deploy to Devnet
-
-```shell
-pnpm anchor deploy --provider.cluster devnet
-```
-
-### web
-
-This is a React app that uses the Anchor generated client to interact with the Solana program.
-
-#### Commands
-
-Start the web app
-
-```shell
-pnpm dev
-```
-
-Build the web app
-
-```shell
-pnpm build
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
